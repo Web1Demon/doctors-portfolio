@@ -79,7 +79,7 @@ export default function TestimonialsSection() {
               <TestimonialCard
                 quote="“I came in feeling broken, and left every session feeling understood and hopeful.”"
                 name="— Mia J."
-              />   d
+              /> 
             </div>
           </div>
       </div>

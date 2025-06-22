@@ -54,7 +54,7 @@ const About = () => {
           <img
             src="images/profile.png"
             alt="Psychologist"
-            className="object-cover w-full h-[70%]"
+            className="object-cover w-full h-80 md:h-[80%]"
           />
         </div>
 

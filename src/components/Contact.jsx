@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import ReCAPTCHA from 'react-google-recaptcha';
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -14,8 +13,6 @@ export const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [captchaToken, setCaptchaToken] = useState(null);
-
-  const recaptchaRef = useRef(null);
 
   useEffect(() => {
     if (submitStatus === 'success') {
@@ -83,10 +80,6 @@ export const ContactForm = () => {
     setErrors(prev => ({ ...prev, [name]: error }));
   };
 
-  const handleCaptchaChange = (token) => {
-    setCaptchaToken(token);
-  };
-
   const handleSubmit = async () => {
     const allTouched = Object.keys(formData).reduce((acc, key) => {
       acc[key] = true;
@@ -130,7 +123,6 @@ export const ContactForm = () => {
       setTouched({});
       setErrors({});
       setCaptchaToken(null);
-      if (recaptchaRef.current) recaptchaRef.current.reset();
     } catch (error) {
       console.error('Failed to send email:', error);
       setSubmitStatus('error');
@@ -152,7 +144,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <section className="min-h-screen p-8 mt-32">
+    <section className="p-8">
       <div className="max-w-3xl mx-auto space-y-8">
         <h2 className="text-3xl font-light tracking-wider mb-8 text-gray-700">Shoot Me a Message!</h2>
 
@@ -203,10 +195,7 @@ export const ContactForm = () => {
             <div className="text-gray-400 text-xs mt-1">{formData.message.length}/1000 characters</div>
           </div>
 
-          {/* reCAPTCHA */}
-          <div className="mt-6">
-            <ReCAPTCHA sitekey="6Lfa8F0rAAAAAIQ7zkQGFSFnu07vO5NehqS3IOJe" onChange={handleCaptchaChange} ref={recaptchaRef} />
-          </div>
+         
 
           {/* Status Messages */}
           {submitStatus === 'captcha-error' && (

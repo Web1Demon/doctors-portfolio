@@ -50,7 +50,7 @@ function TestimonialCard({ quote, name }) {
 export default function TestimonialsSection() {
   return (
       <div>
-          <div className="py-6 mt-[%] px-6 flex flex-col md:flex-row gap-20 max-w-7xl mx-auto items-center">
+          <div className="p-8 mt-32 flex flex-col md:flex-row gap-20 max-w-7xl mx-auto items-center">
             {/* Left side quotes */}
             <div className="md:w-1/2">
               <h2 className="text-5xl font-bold text-neutral-900 mb-10 leading-tight">

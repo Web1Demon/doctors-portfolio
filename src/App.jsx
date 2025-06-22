@@ -1,26 +1,35 @@
-import React from 'react';
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import About from './components/About';
-import TestimonialsSection from './components/Testimonial';
-import Expertise from './components/Expertise';
-import { ContactForm } from './components/Contact';
-import useSmoothScroll from './hooks/useSmoothScroll';  // adjust path if different
+import { useEffect } from "react";
+import Header from "./components/Header";
+import HeroSection from "./components/HeroSection";
+import About from "./components/About";
+import TestimonialsSection from "./components/Testimonial";
+import Expertise from "./components/Expertise";
+import { ContactForm } from "./components/Contact";
+import WhatsAppButton from "./components/WhatsappButton";
+import { Element } from "react-scroll";
 
-const Home = () => {
-
-  useSmoothScroll(); // activate Lenis magic
+const App = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []);
 
   return (
     <>
       <Header />
       <HeroSection />
-      <About />
+      <Element name="about">
+        <About />
+      </Element>
+      <Element name="consultation">
+        <ContactForm />
+      </Element>
       <TestimonialsSection />
-      <ContactForm />
-      <Expertise />
+      <Element name="practice">
+        <Expertise />
+      </Element>
+      <WhatsAppButton />
     </>
-  )
-}
+  );
+};
 
-export default Home;
+export default App;

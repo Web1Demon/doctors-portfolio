@@ -40,12 +40,13 @@ export const ContactForm = () => {
         if (value.length > 50) return 'Name must be less than 50 characters';
         if (!/^[a-zA-Z\s'-]+$/.test(value.trim())) return 'Name can only contain letters, spaces, hyphens, and apostrophes';
         return '';
-      case 'email':
+      case 'email': {
         if (!value.trim()) return 'Email is required';
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) return 'Please enter a valid email address';
         if (value.length > 100) return 'Email must be less than 100 characters';
         return '';
+      }
       case 'message':
         if (!value.trim()) return 'Message is required';
         if (value.length < 10) return 'Message must be at least 10 characters';
@@ -114,7 +115,7 @@ export const ContactForm = () => {
         from_name: formData.name,
         from_email: formData.email,
         message: formData.message,
-        to_name: 'Dr. Kao'
+        to_name: 'Dr. Jasmine'
       };
 
       await emailjs.send(
@@ -224,11 +225,11 @@ export const ContactForm = () => {
           <button
             onClick={handleSubmit}
             disabled={isSubmitting}
-            className={`w-full py-4 px-8 tracking-wider font-light transition-all duration-300 ${
+            className={`w-full py-4 px-8 tracking-wider font-light transition-all duration-300 cursor-pointer ${
               isSubmitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-amber-700 hover:bg-amber-600'
             } text-white`}
           >
-            {isSubmitting ? '📧 SENDING...' : 'SHOOT'}
+            {isSubmitting ? 'SHOOTING...' : 'SHOOT'}
           </button>
         </div>
       </div>

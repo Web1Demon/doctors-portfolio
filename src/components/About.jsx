@@ -1,7 +1,10 @@
+
 const About = () => {
   return (
     <section className="relative min-h-screen overflow-hidden">
+
       {/* First Row */}
+
       <div className="flex flex-col md:flex-row w-full">
         {/* Left Section */}
         <div className="md:w-1/2 p-6 md:p-8 flex flex-col mt-20 md:mt-40 md:ml-40 bg-white">
@@ -37,7 +40,7 @@ const About = () => {
         {/* Right Section */}
         <div className="img md:w-[60%] h-64 md:h-auto">
           <img
-            src="https://drerikakao.com/assets/images/image09.jpg?v=f1750c87"
+            src="images/about.jpg"
             alt="Therapy image"
             className="object-cover w-full h-full grayscale"
           />
@@ -49,19 +52,19 @@ const About = () => {
         {/* Left Section */}
         <div className="md:w-[40%] h-64 md:h-auto md:ml-[10%]">
           <img
-            src="https://drerikakao.com/assets/images/image03.jpg?v=f1750c87"
+            src="images/profile.png"
             alt="Psychologist"
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-[70%]"
           />
         </div>
 
         {/* Right Section */}
         <div className="md:w-1/2 p-6 md:p-8 flex flex-col mt-10 md:mt-0 md:ml-20 bg-white">
           <h2 className="text-2xl text-gray-800" style={{ color: 'rgba(0, 0, 0, 0.6)' }}>
-            Dr. Jack Bowe, PhD
+            Dr. Jasmine Osadebay, PhD
           </h2>
           <p className="italic text-sm" style={{ color: 'rgba(0, 0, 0, 0.4)' }}>
-            Licensed Clinical Psychologist
+            Licensed (doctor's field)
           </p>
 
           <div className="w-32 md:w-[70%] h-0.5 bg-amber-900 mt-4 mb-6"></div>

@@ -50,7 +50,7 @@ function TestimonialCard({ quote, name }) {
 export default function TestimonialsSection() {
   return (
       <div>
-          <div className="py-6 mt-[10%] px-6 flex flex-col md:flex-row gap-20 max-w-7xl mx-auto items-center">
+          <div className="py-6 mt-[%] px-6 flex flex-col md:flex-row gap-20 max-w-7xl mx-auto items-center">
             {/* Left side quotes */}
             <div className="md:w-1/2">
               <h2 className="text-5xl font-bold text-neutral-900 mb-10 leading-tight">
@@ -61,14 +61,14 @@ export default function TestimonialsSection() {
                 <div>
                   <FaQuoteLeft className="text-amber-600 text-3xl mb-4" />
                   <p className="text-xl text-neutral-700 leading-relaxed">
-                    “Dr. Bowe guided me through the hardest time in my life. His calm and wisdom changed everything.”
+                    “Dr. Jasmine's guided me through the hardest time in my life. His calm and wisdom changed everything.”
                   </p>
                 </div>
 
                 <div>
                   <FaQuoteLeft className="text-amber-600 text-3xl mb-4" />
                   <p className="text-xl text-neutral-700 leading-relaxed">
-                    “His honesty and care helped me rediscover myself. I’d recommend him to anyone.”
+                    Her honesty and care helped me rediscover myself. I’d recommend him to anyone.”
                   </p>
                 </div>
               </div>
@@ -79,13 +79,9 @@ export default function TestimonialsSection() {
               <TestimonialCard
                 quote="“I came in feeling broken, and left every session feeling understood and hopeful.”"
                 name="— Mia J."
-              />
+              />   d
             </div>
           </div>
-
-           {/* <div className=" px-[50px] flex flex-col md:flex-row  max-w-7xl mx-auto items-center mt-20">
-                <button className=" bg-amber-600 py-4 px-20 font-semibold text-white rounded">Wanna Say hi!</button>
-            </div> */}
       </div>
   );
 }

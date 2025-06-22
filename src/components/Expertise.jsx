@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from "framer-motion";
 import { Plus, Minus, Instagram, Facebook } from 'lucide-react';
 import Trademark from './Trademark';
 
@@ -51,16 +52,12 @@ export default function Expertise() {
 
          {/* The Rest Section */}
         <div className="space-y-8 pt-12">
-          <h2 className="text-3xl font-light tracking-wider text-gray-400 mb-8">Dr. Jack Bowe</h2>
+          <h2 className="text-3xl font-light tracking-wider text-gray-400 mb-8">Dr. Jasmine Osadebay</h2>
           
-          <div className="space-y-6 text-sm">
-            <div>
-              <p className="text-gray-500 mb-2">Fees & Policy | Publications</p>
-            </div>
-            
+          <div className="space-y-6 text-sm">   
             <div>
               <p className="text-gray-300 leading-relaxed">
-                Dr. Bowe's North County office in Carmel Valley conveniently services Carmel Valley, 4S Ranch, Rancho Bernardo, Sorrento Valley, Black Mountain Ranch, Del Mar, Del Sur, La Jolla, Rancho Santa Fe, & Solana Beach.
+                Dr.Jasmine Osadebay North County office in Carmel Valley conveniently services Carmel Valley, 4S Ranch, Rancho Bernardo, Sorrento Valley, Black Mountain Ranch, Del Mar, Del Sur, La Jolla, Rancho Santa Fe, & Solana Beach.
               </p>
             </div>
             
@@ -74,8 +71,8 @@ export default function Expertise() {
             </div>
             
             <div className="space-y-2">
-              <p className="text-gray-400">- phone: <span className="text-gray-500">858.716.6149</span></p>
-              <p className="text-gray-400">- email: <span className="text-gray-500">drbowe@gmail.com</span></p>
+              <p className="text-gray-400">- phone: <span className="text-gray-500">+234 806.44440.099</span></p>
+              <p className="text-gray-400">- email: <span className="text-gray-500">nnekaosadebay@gmail.com</span></p>
             </div>
             
             <div>
@@ -90,7 +87,7 @@ export default function Expertise() {
 
         {/* Expertise Section */}
         <div className="space-y-6 pt-12">
-          <h2 className="text-xl font-light tracking-wider text-gray-400 mb-8">EXPERTISE</h2>
+          <h2 className="text-xl font-light tracking-wider text-gray-400 mb-8">PRACTICE</h2>
           
           <div className="space-y-4">
             {expertiseItems.map((item) => (

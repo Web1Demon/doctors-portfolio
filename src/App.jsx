@@ -14,7 +14,7 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <div >
       <Header />
       <HeroSection />
       <Element name="about">
@@ -28,7 +28,7 @@ const App = () => {
         <Expertise />
       </Element>
       <WhatsAppButton />
-    </>
+    </div>
   );
 };
 

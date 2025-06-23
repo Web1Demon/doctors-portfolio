@@ -1,6 +1,6 @@
 const HeroSection = () => {
   return (
-    <section className="head brightness-200 relative min-h-screen flex items-center overflow-hidden">
+    <section className="head brightness-200 relative flex items-center ">
       <div className="ml-6 md:ml-[50%] p-4 md:p-0">
         <h2 className="text-4xl md:text-6xl text-white font-semibold">
           Finding <span className="text-yellow-400 ">Clarity</span>, Together.

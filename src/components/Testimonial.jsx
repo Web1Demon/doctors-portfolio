@@ -61,14 +61,14 @@ export default function TestimonialsSection() {
                 <div>
                   <FaQuoteLeft className="text-amber-600 text-3xl mb-4" />
                   <p className="text-xl text-neutral-700 leading-relaxed">
-                    “Dr. Jasmine's guided me through the hardest time in my life. His calm and wisdom changed everything.”
+                    “Dr. Jasmine's guided me through the hardest time in my life. Her calm and wisdom changed everything.”
                   </p>
                 </div>
 
                 <div>
                   <FaQuoteLeft className="text-amber-600 text-3xl mb-4" />
                   <p className="text-xl text-neutral-700 leading-relaxed">
-                    Her honesty and care helped me rediscover myself. I’d recommend him to anyone.”
+                    Her honesty and care helped me rediscover myself. I’d recommend her to anyone.”
                   </p>
                 </div>
               </div>

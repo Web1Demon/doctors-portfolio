@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react"; 
-import { Link } from "react-scroll"; 
+import { Menu, X, Home, Info, PhoneCall, User } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-scroll'
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -15,9 +16,9 @@ const Header = () => {
   }, []);
 
   const navigationItems = [
-    { name: "About", to: "about" },
-    { name: "Consultation", to: "consultation" },
-    { name: "Practice", to: "practice" },
+    { name: "About", to: "about", icon: <Info size={24} /> },
+    { name: "Consultation", to: "consultation", icon: <PhoneCall size={24} /> },
+    { name: "Practice", to: "practice", icon: <User size={24} /> },
   ];
 
   return (
@@ -27,8 +28,8 @@ const Header = () => {
       >
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <span className={`text-3xl font-bold uppercase ${scrolled ? "text-teal-400" : "text-white"}`}>
-           Dr Jasmine Osadebay
+          <span className={`md:text-3xl text-xl font-bold uppercase ${scrolled ? "text-teal-400" : "text-white"}`}>
+           Dr Jasmine
           </span>
         </div>
 
@@ -49,30 +50,61 @@ const Header = () => {
         </div>
 
         {/* Mobile toggle */}
-        <div className="md:hidden">
-          <button onClick={() => setMenuOpen(!menuOpen)} className="text-white hover:text-teal-400 transition">
-            {menuOpen ? <X size={30} /> : <Menu size={30} />}
-          </button>
-        </div>
+        
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="text-white hover:text-amber-400 transition md:hidden"
+        >
+          {menuOpen ? <X size={30} /> : <Menu size={30} />}
+        </button>
+
       </nav>
 
       {/* Mobile menu */}
-      {menuOpen && (
-        <div className={`fixed top-20 right-0 left-0 bg-white/20 backdrop-blur-lg z-40 py-8 flex flex-col items-center space-y-8 transition ${scrolled ? "text-teal-400" : "text-white"}`}>
-          {navigationItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.to}
-              smooth={true}
-              duration={500}
+      <AnimatePresence>
+        {menuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black backdrop-blur-sm z-40"
               onClick={() => setMenuOpen(false)}
-              className="text-2xl font-medium hover:text-gray-800 transition"
+            />
+
+            {/* Side Drawer */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: "tween", duration: 0.3 }}
+              className="fixed top-0 right-0 h-full w-[70%] bg-white shadow-xl z-50 flex flex-col items-start p-8 space-y-8"
             >
-              {item.name}
-            </Link>
-          ))}
-        </div>
-      )}
+              <div className="flex justify-between w-full items-center">
+                <h2 className="text-2xl font-bold text-amber-900">Menu</h2>
+                <button onClick={() => setMenuOpen(false)}><X size={26} className="text-amber-900" /></button>
+              </div>
+
+              <div className="flex flex-col gap-6 mt-4">
+                {navigationItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.to}
+                    smooth={true}
+                    duration={500}
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center gap-4 text-xl font-medium text-gray-800 hover:text-amber-900 transition"
+                  >
+                    {item.icon}
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

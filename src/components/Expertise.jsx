@@ -15,19 +15,19 @@ export default function Expertise() {
 
   const expertiseItems = [
     {
-      id: 'relationships',
-      title: 'RELATIONSHIPS',
-      content: 'Couples therapy, marriage counseling, communication skills, conflict resolution, intimacy issues, and relationship building strategies.'
+      id: 'clinical-psychology',
+      title: 'Clinical Psychology',
+      content: 'Assessment and treatment of emotional, behavioral, and mental health disorders using evidence-based interventions.'
     },
     {
-      id: 'anxiety',
-      title: 'ANXIETY',
-      content: 'Generalized anxiety disorder, social anxiety, panic attacks, phobias, OCD, and evidence-based treatments including CBT and mindfulness techniques.'
+      id: 'forensic-psychology',
+      title: 'Forensic Psychology',
+      content: 'Psychological evaluations and expert witness services within legal and criminal justice systems.'
     },
     {
-      id: 'stress',
-      title: 'STRESS',
-      content: 'Stress management, burnout recovery, work-life balance, coping strategies, relaxation techniques, and building resilience.'
+      id: 'health-psychology',
+      title: 'Health Psychology',
+      content: 'Supporting patients coping with chronic illnesses, pain, and mind-body connections to improve well-being.'
     },
     {
       id: 'life-career',
@@ -55,14 +55,14 @@ export default function Expertise() {
           <h2 className="text-3xl font-light tracking-wider text-gray-400 mb-8">Dr. Jasmine Osadebay</h2>
           
           <div className="space-y-6 text-sm">   
-            <div>
+            {/* <div>
               <p className="text-gray-300 leading-relaxed">
                 Dr.Jasmine Osadebay North County office in Carmel Valley conveniently services Carmel Valley, 4S Ranch, Rancho Bernardo, Sorrento Valley, Black Mountain Ranch, Del Mar, Del Sur, La Jolla, Rancho Santa Fe, & Solana Beach.
               </p>
-            </div>
+            </div> */}
             
             <div>
-              <p className="text-gray-300">California Psychology License #20112</p>
+              <p className="text-gray-300">California Psychology License #20112 (Replace with her actual license)</p>
             </div>
             
             <div className="flex space-x-4 py-4">
@@ -77,8 +77,7 @@ export default function Expertise() {
             
             <div>
               <p className="text-gray-300">
-                445 Marine View Avenue, Suite 300<br />
-                Del Mar, CA 92014
+                Abuja, Nigeria
               </p>
             </div>
           </div>

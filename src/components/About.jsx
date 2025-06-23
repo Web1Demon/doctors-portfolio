@@ -1,89 +1,94 @@
+import { motion } from "framer-motion"
 
 const About = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative md:min-h-screen overflow-hidden font-sans">
 
       {/* First Row */}
-
       <div className="flex flex-col md:flex-row w-full">
         {/* Left Section */}
-        <div className="md:w-1/2 p-6 md:p-8 flex flex-col mt-20 md:mt-40 md:ml-40 bg-white">
-          <h2 className="text-2xl font-semibold text-gray-800" style={{ color: 'rgba(0, 0, 0, 0.6)' }}>
-            What is it like to have me as your doctor?
+        <div className="md:w-1/2 p-6 md:p-12 flex flex-col mt-20 md:mt-32 md:ml-24 bg-white">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-amber-900 mb-4">
+            What’s it like to have me as your medical consultant?
           </h2>
+          <div className="w-24 md:w-48 h-1 bg-amber-700 mb-8"></div>
 
-          <div className="w-32 md:w-64 h-0.5 bg-amber-900 mt-4 mb-6"></div>
-
-          <p className="leading-relaxed mb-4 text-sm md:text-base">
-            I believe every patient deserves care that’s personal, thoughtful, and rooted in real science —
-            not a one-size-fits-all approach. If something isn’t working, we won’t force it. Together, we’ll
-            explore new paths, tailor your treatment, and find what truly fits you.
+          <p className="leading-relaxed text-gray-700 text-base md:text-lg mb-4">
+            Every patient deserves more than a cookie-cutter diagnosis — they deserve care that sees them fully. 
+            My approach is personalized, thoughtful, and grounded in science. If something doesn’t align with your needs, 
+            we pivot. Together, we’ll co-create a treatment plan that fits your life and goals.
           </p>
 
-          <p className="leading-relaxed mb-4 text-sm md:text-base">
-            My commitment is to stay informed, compassionate, and transparent.
-            As a licensed practitioner, I hold myself to the highest standards of privacy, integrity, and evidence-based care.
+          <p className="leading-relaxed text-gray-700 text-base md:text-lg mb-4">
+            I’m committed to staying informed, compassionate, and honest. As a licensed professional, I uphold the highest 
+            standards of ethics, confidentiality, and clinical excellence. Your trust isn’t just valued — it’s sacred.
           </p>
 
-          <p className="leading-relaxed mb-4 text-sm md:text-base">
-            I’ll be your advocate, your challenger, and your support. I’ll encourage you to build stronger
-            boundaries, nurture your emotional resilience, and lean into growth — even when it’s uncomfortable.
+          <p className="leading-relaxed text-gray-700 text-base md:text-lg mb-4">
+            I’ll be more than your doctor — I’ll be your teammate, motivator, and gentle reality-check. 
+            Expect encouragement, challenge, and consistent support as you grow — even through the hard parts.
           </p>
 
-          <p className="leading-relaxed mb-4 text-sm md:text-base">
-            Healing isn’t linear. Life is about evolving, rebuilding, and rising from challenges. I’ve lived
-            that journey, too. With me, you’ll find a safe, collaborative space filled with warmth, humor, and
-            the understanding that you are never alone in this.
+          <p className="leading-relaxed text-gray-700 text-base md:text-lg">
+            Healing’s never a straight line. It’s a journey of unlearning, rebuilding, and rediscovering who you are. 
+            I’ve walked that path too. With me, you’ll find a space that’s warm, collaborative, and real — where your story matters 
+            and you never have to walk alone.
           </p>
         </div>
 
         {/* Right Section */}
-        <div className="img md:w-[60%] h-64 md:h-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="md:w-1/2 h-64 md:h-auto"
+        >
           <img
-            src="images/about.jpg"
-            alt="Therapy image"
-            className="object-cover w-full h-full grayscale"
+            src="images/about-image.jpg"
+            alt="Consultant session"
+            className="w-full h-full object-cover grayscale rounded-lg shadow-xl hover:grayscale-0 transition duration-500"
           />
-        </div>
+        </motion.div>
       </div>
 
       {/* Second Row */}
-      <div className="flex flex-col md:flex-row w-full mt-10">
+      <div className="flex flex-col md:flex-row w-full mt-16">
         {/* Left Section */}
-        <div className="md:w-[40%] h-64 md:h-auto md:ml-[10%]">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="md:w-[40%] h-64 md:h-auto md:ml-[10%]"
+        >
           <img
             src="images/profile.png"
             alt="Psychologist"
-            className="object-cover w-full h-80 md:h-[80%]"
+            className="object-cover w-full h-80 md:h-[80%] rounded-xl shadow-lg"
           />
-        </div>
+        </motion.div>
 
         {/* Right Section */}
-        <div className="md:w-1/2 p-6 md:p-8 flex flex-col mt-10 md:mt-0 md:ml-20 bg-white">
-          <h2 className="text-2xl text-gray-800" style={{ color: 'rgba(0, 0, 0, 0.6)' }}>
+        <div className="md:w-1/2 p-6 md:p-12 flex flex-col mt-10 md:mt-0 md:ml-16 bg-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-2">
             Dr. Jasmine Osadebay, PhD
           </h2>
-          <p className="italic text-sm" style={{ color: 'rgba(0, 0, 0, 0.4)' }}>
-            Licensed (doctor's field)
-          </p>
+          <p className="italic text-sm text-gray-500 mb-4">Licensed Clinical Psychologist</p>
+          <div className="w-24 md:w-48 h-1 bg-amber-700 mb-6"></div>
 
-          <div className="w-32 md:w-[70%] h-0.5 bg-amber-900 mt-4 mb-6"></div>
-
-          <p className="text-left text-sm md:text-xl leading-relaxed font-medium" style={{ color: 'rgba(0, 0, 0, 0.6)' }}>
-            - M.A. and Ph.D. from The Ohio State University<br />
-            - Awarded Dean’s Fellowship scholarship which fully funded graduate work<br />
-            - B.A. in Honors Psychology cum Laude at University of Michigan<br />
-            - Awarded the Multicultural Initiative Scholarship for senior year thesis<br />
-            - Asian American cross-cultural psychology research published in the Journal of Social Psychology and the Journal of Career Assessment<br />
-            - Internship in Health Psychology and Neuropsychology at the Carl T. Hayden Veterans Administration Medical Center<br />
-            - Postdoctoral training in Forensic Neuropsychology and Behavioral Health Psychology at Maricopa Integrated Health Behavioral Health Centers<br />
-            - Licensed psychologist since 2001, first in Phoenix, AZ and since 2005 in San Diego, CA<br />
-            - Theoretical perspective is Integrative, with emphasis on Attachment Theory and Cognitive Behavioral Therapy
+          <p className="text-base md:text-lg leading-relaxed text-gray-700 space-y-2">
+            <span>- M.A. & Ph.D. from The Ohio State University</span><br />
+            <span>- Dean’s Fellowship recipient</span><br />
+            <span>- B.A. Honors Psychology, University of Michigan</span><br />
+            <span>- Published research in Journal of Social Psychology & Career Assessment</span><br />
+            <span>- Internship at Carl T. Hayden Veterans Administration Medical Center</span><br />
+            <span>- Postdoctoral training in Forensic Neuropsychology</span><br />
+            <span>- Licensed since 2001 (AZ & CA)</span><br />
+            <span>- Integrative practice: Attachment Theory & Cognitive Behavioral Therapy</span>
           </p>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About;
+export default About
